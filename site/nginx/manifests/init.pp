@@ -48,13 +48,13 @@ class nginx {
 
 	file { "${confdir}/nginx.conf":
 		ensure => file,
-		source => template('nginx/nginx.conf.erb'),
+		content => template('nginx/nginx.conf.erb'),
 		notify => Service['nginx'],
 	}
 
 	file { "${confdir}/conf.d/default.conf":
 		ensure => file,
-		source => template('nginx/nginx.conf.erb'),
+		content => template('nginx/nginx.conf.erb'),
 		notify => Service['nginx'],
 	}
 
